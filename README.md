@@ -76,8 +76,8 @@ I personally recommend the non-Docker method of testing;
 
 
 #### 1. Clone the challenge repository
-    git clone https://github.com/partcleda/partcl-macro-place-challenge.git
-    cd MacroPlacer
+    git clone https://github.com/NotCleo/macro-placer.git
+    cd macro-placer
 
 #### 2. Initialize TILOS MacroPlacement submodule
     git submodule update --init external/MacroPlacement
