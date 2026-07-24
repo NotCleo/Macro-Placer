@@ -1,0 +1,1023 @@
+================================================================================
+evaluate · AnalyticalPlacer  (/home/macro-place-challenge-2026/Two-IIITK-Kids_MacroPlaceChallenge2026/V13_V6/placer.py)
+================================================================================
+
+  ibm01... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm01/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 45, Row: 41
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm01/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 45, Row: 41
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm01: hard=246 total=1140 nets=5993 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.0385 ovr=69 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.0277 ovr=0 WL=0.083 D=0.730 C=1.160 t=42s
+      [lnp] bulk=0s rounds=1/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=0s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=0s retries=0 final_ovr=0
+    [c1-timing] GD=65s legalize=0s
+       gd_c1: proxy=0.8262 ovr=0 WL=0.084 D=0.518 C=0.967 t=110s
+       cd_c1: proxy=0.8155 ovr=0 WL=0.084 D=0.509 C=0.954 t=140s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 20.6% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=0.8185 ovr=0 WL=0.083 D=0.515 C=0.956 t=178s
+       cd_c2: proxy=0.8085 ovr=0 WL=0.083 D=0.508 C=0.944 t=208s
+      cgc_c2: proxy=0.8076 ovr=0 WL=0.083 D=0.508 C=0.941 t=242s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=0.8152 ovr=0 WL=0.083 D=0.514 C=0.951 t=266s
+       cd_c3: proxy=0.8058 ovr=0 WL=0.083 D=0.506 C=0.940 t=295s
+      cgc_c3: proxy=0.8053 ovr=0 WL=0.083 D=0.507 C=0.939 t=329s
+  -- swap refine --
+        swap: proxy=0.8022 ovr=0 WL=0.082 D=0.507 C=0.933 t=399s
+    cd_final: proxy=0.8006 ovr=0 WL=0.082 D=0.505 C=0.931 t=430s
+     cd_cong: proxy=0.7994 ovr=0 WL=0.082 D=0.506 C=0.929 t=495s
+  -- V13-rev T3 (early): longest-net joint reposition (top-5) --
+   t3e_netrp: proxy=0.7994 ovr=0 WL=0.082 D=0.506 C=0.929 t=513s
+  t3e_netrp_cd: proxy=0.7993 ovr=0 WL=0.082 D=0.505 C=0.929 t=530s
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=0.7971 ovr=0 WL=0.082 D=0.504 C=0.927 t=533s
+  opt1_sc_cd: proxy=0.7962 ovr=0 WL=0.082 D=0.502 C=0.927 t=544s
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=0.7962 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=0.7962 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=0.7962 < 1.15, deep convergence) --
+  -- V13-rev wide-area swap (area 0.3/3.3) --
+   wide_swap: proxy=0.7959 ovr=0 WL=0.081 D=0.502 C=0.927 t=582s
+  wide_swap_cd: proxy=0.7952 ovr=0 WL=0.081 D=0.502 C=0.926 t=598s
+  -- refine_iter 1 (rem=2702s) --
+     rf1_swp: proxy=0.7939 ovr=0 WL=0.081 D=0.502 C=0.924 t=655s
+      rf1_cd: proxy=0.7930 ovr=0 WL=0.081 D=0.501 C=0.922 t=671s
+      rf1_cg: proxy=0.7927 ovr=0 WL=0.081 D=0.501 C=0.922 t=704s
+  -- refine_iter 2 (rem=2596s) --
+     rf2_swp: proxy=0.7924 ovr=0 WL=0.081 D=0.501 C=0.921 t=761s
+      rf2_cd: proxy=0.7921 ovr=0 WL=0.081 D=0.501 C=0.921 t=777s
+      rf2_cg: proxy=0.7920 ovr=0 WL=0.081 D=0.501 C=0.921 t=810s
+  -- refine_iter 3 (rem=2490s) --
+     rf3_swp: proxy=0.7918 ovr=0 WL=0.081 D=0.501 C=0.921 t=870s
+      rf3_cd: proxy=0.7916 ovr=0 WL=0.081 D=0.501 C=0.920 t=887s
+      rf3_cg: proxy=0.7915 ovr=0 WL=0.081 D=0.501 C=0.920 t=923s
+  [V13-rev7] early refine_iter exit (Δ 0.00051 < 0.0015, LAHC reserve has headroom)
+  polish1_cg: proxy=0.7915 ovr=0 WL=0.081 D=0.501 C=0.920 t=956s
+   polish2_p: proxy=0.7914 ovr=0 WL=0.081 D=0.501 C=0.920 t=972s
+  polish3_cg: proxy=0.7914 ovr=0 WL=0.081 D=0.501 C=0.920 t=1002s
+   fine_swap: proxy=0.7913 ovr=0 WL=0.081 D=0.501 C=0.920 t=1020s
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=0.7858 ovr=0 WL=0.081 D=0.498 C=0.910 t=1024s
+  -- V13-rev9 LAHC polish (rem=2276s) --
+     std triple-restart: 3 runs × 709s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.7549 ovr=0 WL=0.078 D=0.491 C=0.863 t=1736s
+  lap_post_r1: proxy=0.7546 ovr=0 WL=0.078 D=0.491 C=0.863 t=1742s
+     lahc_r2: proxy=0.7497 ovr=0 WL=0.078 D=0.484 C=0.859 t=2453s
+  lap_post_r2: proxy=0.7496 ovr=0 WL=0.078 D=0.484 C=0.859 t=2459s
+     lahc_r3: proxy=0.7467 ovr=1 WL=0.078 D=0.482 C=0.856 t=3171s
+  lap_post_r3: proxy=0.7496 ovr=0 WL=0.078 D=0.484 C=0.859 t=3177s
+>>> ibm01: best=lap_post_r3 proxy=0.7496 t=3177s
+proxy=0.7496  (wl=0.078 den=0.484 cong=0.859)  VALID  [3176.60s]
+
+
+  ibm02... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm02/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 30, Row: 27
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm02/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 30, Row: 27
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm02: hard=271 total=1346 nets=9668 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.5658 ovr=108 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.4609 ovr=0 WL=0.090 D=0.783 C=1.958 t=99s
+      [lnp] bulk=12s rounds=8/8 bulk_iters=500 viol_after_bulk=71
+      [lnp] greedy=0s viol_after_greedy=52
+      [lnp] spiral=7s viol_after_spiral=11
+      [lnp] internal_fd=2s
+    [attempt s=42] legalize_np=21s viol_after_lnp=3 force_displace=13s (grid 160/6)
+      [lnp] bulk=12s rounds=8/8 bulk_iters=500 viol_after_bulk=89
+      [lnp] greedy=0s viol_after_greedy=47
+      [lnp] spiral=5s viol_after_spiral=8
+      [lnp] internal_fd=0s
+    [attempt s=7961] legalize_np=18s viol_after_lnp=0 force_displace=0s (grid 280/9)
+    [legalize] total=52s retries=1 final_ovr=0
+    [c1-timing] GD=401s legalize=52s
+       gd_c1: proxy=1.2555 ovr=0 WL=0.105 D=0.665 C=1.636 t=559s
+       cd_c1: proxy=1.1516 ovr=0 WL=0.106 D=0.605 C=1.485 t=600s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 21.2% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.1699 ovr=0 WL=0.108 D=0.594 C=1.530 t=827s
+       cd_c2: proxy=1.1066 ovr=0 WL=0.108 D=0.576 C=1.422 t=869s
+      cgc_c2: proxy=1.0933 ovr=0 WL=0.108 D=0.577 C=1.394 t=927s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.1718 ovr=0 WL=0.108 D=0.592 C=1.536 t=1069s
+       cd_c3: proxy=1.1078 ovr=0 WL=0.108 D=0.575 C=1.425 t=1109s
+      cgc_c3: proxy=1.0956 ovr=0 WL=0.108 D=0.579 C=1.396 t=1164s
+  -- swap refine --
+        swap: proxy=1.0855 ovr=0 WL=0.109 D=0.577 C=1.377 t=1295s
+    cd_final: proxy=1.0805 ovr=0 WL=0.108 D=0.576 C=1.369 t=1337s
+     cd_cong: proxy=1.0785 ovr=0 WL=0.108 D=0.575 C=1.365 t=1442s
+  -- [V16] late-cd_cong std bench (rem@cdcong=1858s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=1.0894 ovr=0 WL=0.102 D=0.559 C=1.417 t=1450s
+  opt1_sc_cd: proxy=1.0782 ovr=0 WL=0.108 D=0.574 C=1.365 t=1468s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=1832s → Laplacian+LAHC)
+  -- [V13-rev5] skipping hess+sig escape (best=1.0782 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=1.0782 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.0579 ovr=0 WL=0.107 D=0.555 C=1.346 t=1481s
+  -- V13-rev9 LAHC polish (rem=1819s) --
+     std triple-restart: 3 runs × 556s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.9737 ovr=0 WL=0.087 D=0.507 C=1.267 t=2045s
+  lap_post_r1: proxy=0.9723 ovr=0 WL=0.087 D=0.506 C=1.264 t=2058s
+     lahc_r2: proxy=0.9537 ovr=0 WL=0.086 D=0.505 C=1.231 t=2622s
+  lap_post_r2: proxy=0.9534 ovr=0 WL=0.086 D=0.505 C=1.230 t=2635s
+     lahc_r3: proxy=0.9465 ovr=0 WL=0.085 D=0.505 C=1.218 t=3199s
+  lap_post_r3: proxy=0.9463 ovr=0 WL=0.085 D=0.505 C=1.218 t=3212s
+>>> ibm02: best=lap_post_r3 proxy=0.9463 t=3212s
+proxy=0.9463  (wl=0.085 den=0.505 cong=1.218)  VALID  [3212.12s]
+
+  ibm03... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm03/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 32, Row: 29
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm03/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 32, Row: 29
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm03: hard=290 total=1438 nets=7674 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.3255 ovr=61 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.1999 ovr=0 WL=0.093 D=0.649 C=1.565 t=66s
+      [lnp] bulk=11s rounds=7/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=11s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=11s retries=0 final_ovr=0
+    [c1-timing] GD=80s legalize=11s
+       gd_c1: proxy=1.0850 ovr=0 WL=0.104 D=0.570 C=1.391 t=162s
+       cd_c1: proxy=0.9834 ovr=0 WL=0.106 D=0.530 C=1.225 t=201s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 18.0% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.0659 ovr=0 WL=0.107 D=0.548 C=1.369 t=254s
+  [V13 S1] gd_c2 (1.0659) regressed >6% vs best (0.9834) — skipping rest of c2 + all of c3
+  -- swap refine --
+        swap: proxy=0.9763 ovr=0 WL=0.108 D=0.530 C=1.207 t=345s
+    cd_final: proxy=0.9652 ovr=0 WL=0.107 D=0.528 C=1.187 t=383s
+     cd_cong: proxy=0.9559 ovr=0 WL=0.108 D=0.529 C=1.168 t=488s
+  -- V13-rev T3 (early): longest-net joint reposition (top-5) --
+   t3e_netrp: proxy=0.9559 ovr=0 WL=0.108 D=0.529 C=1.168 t=515s
+  t3e_netrp_cd: proxy=0.9549 ovr=0 WL=0.107 D=0.528 C=1.167 t=537s
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=0.9516 ovr=0 WL=0.105 D=0.523 C=1.171 t=542s
+  opt1_sc_cd: proxy=0.9490 ovr=0 WL=0.105 D=0.522 C=1.166 t=557s
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=0.9490 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=0.9490 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=0.9490 < 1.15, deep convergence) --
+  -- V13-rev wide-area swap (area 0.3/3.3) --
+   wide_swap: proxy=0.9473 ovr=0 WL=0.105 D=0.522 C=1.163 t=611s
+  wide_swap_cd: proxy=0.9458 ovr=0 WL=0.104 D=0.522 C=1.160 t=632s
+  -- refine_iter 1 (rem=2668s) --
+     rf1_swp: proxy=0.9435 ovr=0 WL=0.104 D=0.522 C=1.156 t=709s
+      rf1_cd: proxy=0.9418 ovr=0 WL=0.104 D=0.522 C=1.153 t=732s
+      rf1_cg: proxy=0.9393 ovr=0 WL=0.104 D=0.522 C=1.148 t=786s
+  -- refine_iter 2 (rem=2514s) --
+     rf2_swp: proxy=0.9384 ovr=0 WL=0.104 D=0.522 C=1.146 t=865s
+      rf2_cd: proxy=0.9380 ovr=0 WL=0.104 D=0.522 C=1.145 t=886s
+      rf2_cg: proxy=0.9375 ovr=0 WL=0.104 D=0.522 C=1.144 t=938s
+  -- refine_iter 3 (rem=2362s) --
+     rf3_swp: proxy=0.9367 ovr=0 WL=0.104 D=0.522 C=1.143 t=1005s
+      rf3_cd: proxy=0.9364 ovr=0 WL=0.104 D=0.522 C=1.143 t=1021s
+      rf3_cg: proxy=0.9351 ovr=0 WL=0.104 D=0.522 C=1.140 t=1073s
+  -- refine_iter 4 (rem=2227s) --
+     rf4_swp: proxy=0.9348 ovr=0 WL=0.104 D=0.522 C=1.140 t=1153s
+      rf4_cd: proxy=0.9346 ovr=0 WL=0.104 D=0.522 C=1.139 t=1174s
+      rf4_cg: proxy=0.9339 ovr=0 WL=0.104 D=0.522 C=1.138 t=1226s
+  [V13-rev7] early refine_iter exit (Δ 0.00127 < 0.0015, LAHC reserve has headroom)
+  polish1_cg: proxy=0.9336 ovr=0 WL=0.104 D=0.522 C=1.137 t=1277s
+   polish2_p: proxy=0.9336 ovr=0 WL=0.104 D=0.522 C=1.137 t=1299s
+  polish3_cg: proxy=0.9331 ovr=0 WL=0.104 D=0.522 C=1.136 t=1351s
+   polish4_p: proxy=0.9330 ovr=0 WL=0.104 D=0.522 C=1.136 t=1372s
+   fine_swap: proxy=0.9330 ovr=0 WL=0.104 D=0.522 C=1.136 t=1397s
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=0.9228 ovr=0 WL=0.102 D=0.506 C=1.136 t=1405s
+  -- V13-rev9 LAHC polish (rem=1895s) --
+     std triple-restart: 3 runs × 582s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.8798 ovr=0 WL=0.094 D=0.500 C=1.072 t=1992s
+  lap_post_r1: proxy=0.8796 ovr=0 WL=0.093 D=0.500 C=1.072 t=2001s
+     lahc_r2: proxy=0.8749 ovr=0 WL=0.093 D=0.500 C=1.065 t=2587s
+  lap_post_r2: proxy=0.8748 ovr=0 WL=0.092 D=0.500 C=1.065 t=2597s
+     lahc_r3: proxy=0.8728 ovr=0 WL=0.092 D=0.500 C=1.062 t=3183s
+  lap_post_r3: proxy=0.8727 ovr=0 WL=0.092 D=0.500 C=1.061 t=3193s
+>>> ibm03: best=lap_post_r3 proxy=0.8727 t=3193s
+proxy=0.8727  (wl=0.092 den=0.500 cong=1.061)  VALID  [3192.83s]
+
+  ibm04... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm04/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 31, Row: 30
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm04/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 31, Row: 30
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm04: hard=295 total=1380 nets=9642 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.3133 ovr=68 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.2170 ovr=0 WL=0.080 D=0.751 C=1.523 t=86s
+      [lnp] bulk=3s rounds=3/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=3s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=3s retries=0 final_ovr=0
+    [c1-timing] GD=323s legalize=3s
+       gd_c1: proxy=1.0501 ovr=0 WL=0.091 D=0.579 C=1.340 t=419s
+       cd_c1: proxy=0.9902 ovr=0 WL=0.091 D=0.553 C=1.245 t=465s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 18.6% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.0428 ovr=0 WL=0.091 D=0.568 C=1.336 t=644s
+       cd_c2: proxy=0.9971 ovr=0 WL=0.091 D=0.556 C=1.257 t=688s
+      cgc_c2: proxy=0.9886 ovr=0 WL=0.091 D=0.554 C=1.242 t=753s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.0420 ovr=0 WL=0.091 D=0.554 C=1.348 t=861s
+       cd_c3: proxy=0.9949 ovr=0 WL=0.091 D=0.550 C=1.258 t=906s
+      cgc_c3: proxy=0.9889 ovr=0 WL=0.091 D=0.551 C=1.245 t=974s
+  -- swap refine --
+        swap: proxy=0.9840 ovr=0 WL=0.092 D=0.554 C=1.230 t=1113s
+    cd_final: proxy=0.9770 ovr=0 WL=0.091 D=0.549 C=1.222 t=1158s
+     cd_cong: proxy=0.9731 ovr=0 WL=0.091 D=0.549 C=1.214 t=1265s
+  -- [V16] late-cd_cong std bench (rem@cdcong=2035s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=0.9779 ovr=0 WL=0.090 D=0.543 C=1.234 t=1272s
+  opt1_sc_cd: proxy=0.9728 ovr=0 WL=0.091 D=0.548 C=1.215 t=1290s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=2010s → Laplacian+LAHC)
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=0.9728 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=0.9728 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=0.9728 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=0.9485 ovr=0 WL=0.091 D=0.537 C=1.177 t=1301s
+  -- V13-rev9 LAHC polish (rem=1999s) --
+     std triple-restart: 3 runs × 616s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.8995 ovr=0 WL=0.083 D=0.503 C=1.130 t=1924s
+  lap_post_r1: proxy=0.8994 ovr=0 WL=0.083 D=0.503 C=1.130 t=1935s
+     lahc_r2: proxy=0.8936 ovr=0 WL=0.081 D=0.503 C=1.121 t=2558s
+  lap_post_r2: proxy=0.8934 ovr=0 WL=0.081 D=0.503 C=1.121 t=2570s
+     lahc_r3: proxy=0.8920 ovr=0 WL=0.081 D=0.503 C=1.119 t=3193s
+  lap_post_r3: proxy=0.8919 ovr=0 WL=0.081 D=0.503 C=1.119 t=3204s
+>>> ibm04: best=lap_post_r3 proxy=0.8919 t=3204s
+proxy=0.8919  (wl=0.081 den=0.503 cong=1.119)  VALID  [3204.00s]
+
+  ibm06... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm06/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 31, Row: 28
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm06/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 31, Row: 28
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm06: hard=178 total=1078 nets=9964 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.6577 ovr=47 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.7352 ovr=0 WL=0.096 D=0.698 C=2.580 t=97s
+      [lnp] bulk=4s rounds=8/8 bulk_iters=500 viol_after_bulk=28
+      [lnp] greedy=0s viol_after_greedy=21
+      [lnp] spiral=5s viol_after_spiral=9
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=9s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=9s retries=0 final_ovr=0
+    [c1-timing] GD=186s legalize=9s
+       gd_c1: proxy=1.3961 ovr=0 WL=0.094 D=0.647 C=1.957 t=300s
+       cd_c1: proxy=1.3181 ovr=0 WL=0.094 D=0.582 C=1.867 t=332s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 24.0% > 12%, basin strong) --
+  [auto-cong] cong_frac=0.71 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.3212 ovr=0 WL=0.095 D=0.556 C=1.897 t=440s
+       cd_c2: proxy=1.2861 ovr=0 WL=0.094 D=0.547 C=1.836 t=471s
+      cgc_c2: proxy=1.2725 ovr=0 WL=0.094 D=0.553 C=1.804 t=532s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.2992 ovr=0 WL=0.095 D=0.551 C=1.858 t=593s
+       cd_c3: proxy=1.2786 ovr=0 WL=0.095 D=0.544 C=1.824 t=625s
+      cgc_c3: proxy=1.2721 ovr=0 WL=0.095 D=0.548 C=1.806 t=687s
+  -- swap refine --
+        swap: proxy=1.2613 ovr=0 WL=0.096 D=0.547 C=1.783 t=810s
+    cd_final: proxy=1.2589 ovr=0 WL=0.096 D=0.546 C=1.780 t=841s
+     cd_cong: proxy=1.2566 ovr=0 WL=0.096 D=0.545 C=1.777 t=954s
+  -- [V16] late-cd_cong std bench (rem@cdcong=2346s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=1.2536 ovr=0 WL=0.094 D=0.541 C=1.779 t=963s
+  opt1_sc_cd: proxy=1.2445 ovr=0 WL=0.093 D=0.541 C=1.762 t=978s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=2322s → Laplacian+LAHC)
+  -- skipping hess+sig escape (cd_cong gain 1.14% < 0.15%, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.2120 ovr=0 WL=0.093 D=0.542 C=1.695 t=991s
+  -- V13-rev9 LAHC polish (rem=2309s) --
+     std triple-restart: 3 runs × 720s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=1.1308 ovr=0 WL=0.081 D=0.502 C=1.598 t=1718s
+  lap_post_r1: proxy=1.1305 ovr=0 WL=0.081 D=0.502 C=1.598 t=1733s
+     lahc_r2: proxy=1.1201 ovr=0 WL=0.080 D=0.500 C=1.581 t=2460s
+  lap_post_r2: proxy=1.1199 ovr=0 WL=0.080 D=0.500 C=1.580 t=2474s
+     lahc_r3: proxy=1.1173 ovr=0 WL=0.079 D=0.500 C=1.577 t=3201s
+  lap_post_r3: proxy=1.1173 ovr=0 WL=0.079 D=0.500 C=1.577 t=3214s
+>>> ibm06: best=lap_post_r3 proxy=1.1173 t=3214s
+proxy=1.1173  (wl=0.079 den=0.500 cong=1.577)  VALID  [3214.40s]
+
+  ibm07... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm07/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 35, Row: 32
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm07/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 35, Row: 32
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm07: hard=291 total=1331 nets=13964 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.4758 ovr=82 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.3679 ovr=0 WL=0.077 D=0.833 C=1.748 t=154s
+      [lnp] bulk=3s rounds=3/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=3s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=3s retries=0 final_ovr=0
+    [c1-timing] GD=71s legalize=3s
+       gd_c1: proxy=1.1006 ovr=0 WL=0.092 D=0.567 C=1.451 t=241s
+       cd_c1: proxy=1.0470 ovr=0 WL=0.092 D=0.534 C=1.376 t=294s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 23.5% > 12%, basin strong) --
+  [auto-cong] cong_frac=0.66 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.1077 ovr=0 WL=0.092 D=0.584 C=1.447 t=366s
+       cd_c2: proxy=1.0588 ovr=0 WL=0.092 D=0.553 C=1.380 t=426s
+      cgc_c2: proxy=1.0528 ovr=0 WL=0.092 D=0.556 C=1.365 t=528s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.0892 ovr=0 WL=0.092 D=0.561 C=1.433 t=565s
+       cd_c3: proxy=1.0452 ovr=0 WL=0.092 D=0.541 C=1.365 t=626s
+      cgc_c3: proxy=1.0375 ovr=0 WL=0.092 D=0.539 C=1.351 t=729s
+  -- swap refine --
+        swap: proxy=1.0341 ovr=0 WL=0.093 D=0.539 C=1.343 t=856s
+    cd_final: proxy=1.0311 ovr=0 WL=0.093 D=0.537 C=1.340 t=918s
+     cd_cong: proxy=1.0302 ovr=0 WL=0.093 D=0.537 C=1.338 t=1032s
+  -- [V16] late-cd_cong std bench (rem@cdcong=2268s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=1.0399 ovr=0 WL=0.091 D=0.524 C=1.375 t=1049s
+  opt1_sc_cd: proxy=1.0300 ovr=0 WL=0.093 D=0.537 C=1.338 t=1077s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=2223s → Laplacian+LAHC)
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=1.0300 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=1.0300 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=1.0300 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.0109 ovr=0 WL=0.091 D=0.522 C=1.317 t=1099s
+  -- V13-rev9 LAHC polish (rem=2201s) --
+     std triple-restart: 3 runs × 684s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.9713 ovr=0 WL=0.084 D=0.502 C=1.273 t=1795s
+  lap_post_r1: proxy=0.9710 ovr=0 WL=0.084 D=0.502 C=1.272 t=1814s
+     lahc_r2: proxy=0.9653 ovr=0 WL=0.083 D=0.502 C=1.264 t=2512s
+  lap_post_r2: proxy=0.9652 ovr=0 WL=0.083 D=0.502 C=1.263 t=2534s
+     lahc_r3: proxy=0.9628 ovr=0 WL=0.082 D=0.501 C=1.260 t=3233s
+  lap_post_r3: proxy=0.9627 ovr=0 WL=0.082 D=0.501 C=1.260 t=3255s
+>>> ibm07: best=lap_post_r3 proxy=0.9627 t=3255s
+proxy=0.9627  (wl=0.082 den=0.501 cong=1.260)  VALID  [3254.61s]
+
+  ibm08... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm08/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 38, Row: 34
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm08/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 38, Row: 34
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm08: hard=301 total=1331 nets=15042 device=cuda mode=std cd_cfg={'K': 10, 'R': 18} budget=3300s ===
+  init      : proxy=1.4664 ovr=86 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.6039 ovr=0 WL=0.109 D=0.802 C=2.188 t=204s
+      [lnp] bulk=5s rounds=4/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=5s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=5s retries=0 final_ovr=0
+    [c1-timing] GD=416s legalize=5s
+       gd_c1: proxy=1.2618 ovr=0 WL=0.094 D=0.662 C=1.672 t=639s
+       cd_c1: proxy=1.1961 ovr=0 WL=0.094 D=0.651 C=1.554 t=689s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 25.4% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.2002 ovr=0 WL=0.094 D=0.632 C=1.581 t=934s
+       cd_c2: proxy=1.1597 ovr=0 WL=0.093 D=0.621 C=1.512 t=984s
+      cgc_c2: proxy=1.1488 ovr=0 WL=0.094 D=0.617 C=1.493 t=1058s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.1835 ovr=0 WL=0.094 D=0.607 C=1.571 t=1204s
+       cd_c3: proxy=1.1490 ovr=0 WL=0.094 D=0.600 C=1.511 t=1255s
+      cgc_c3: proxy=1.1454 ovr=0 WL=0.094 D=0.601 C=1.502 t=1335s
+  -- swap refine --
+        swap: proxy=1.1423 ovr=0 WL=0.094 D=0.601 C=1.495 t=1529s
+    cd_final: proxy=1.1362 ovr=0 WL=0.094 D=0.597 C=1.488 t=1581s
+     cd_cong: proxy=1.1336 ovr=0 WL=0.094 D=0.599 C=1.480 t=1694s
+  -- [V16] late-cd_cong std bench (rem@cdcong=1606s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=1.1203 ovr=0 WL=0.092 D=0.588 C=1.469 t=1708s
+  opt1_sc_cd: proxy=1.1186 ovr=0 WL=0.092 D=0.588 C=1.467 t=1735s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=1565s → Laplacian+LAHC)
+  -- skipping hess+sig escape (cd_cong gain 1.55% < 0.15%, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.0910 ovr=0 WL=0.091 D=0.563 C=1.437 t=1753s
+  -- V13-rev9 LAHC polish (rem=1547s) --
+     std triple-restart: 3 runs × 466s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=1.0236 ovr=0 WL=0.085 D=0.513 C=1.364 t=2232s
+  lap_post_r1: proxy=1.0226 ovr=0 WL=0.085 D=0.511 C=1.364 t=2250s
+     lahc_r2: proxy=1.0116 ovr=0 WL=0.085 D=0.508 C=1.346 t=2730s
+  lap_post_r2: proxy=1.0115 ovr=0 WL=0.085 D=0.508 C=1.346 t=2752s
+     lahc_r3: proxy=1.0079 ovr=0 WL=0.084 D=0.507 C=1.340 t=3235s
+  lap_post_r3: proxy=1.0078 ovr=0 WL=0.084 D=0.507 C=1.340 t=3260s
+>>> ibm08: best=lap_post_r3 proxy=1.0078 t=3260s
+proxy=1.0078  (wl=0.084 den=0.507 cong=1.340)  VALID  [3260.13s]
+
+  ibm09... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm09/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 36, Row: 38
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm09/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 36, Row: 38
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm09: hard=253 total=1301 nets=12342 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.1126 ovr=101 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.2962 ovr=0 WL=0.091 D=0.872 C=1.538 t=129s
+      [lnp] bulk=1s rounds=1/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=1s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=1s retries=0 final_ovr=0
+    [c1-timing] GD=103s legalize=1s
+       gd_c1: proxy=0.9353 ovr=0 WL=0.075 D=0.607 C=1.115 t=244s
+       cd_c1: proxy=0.8945 ovr=0 WL=0.075 D=0.601 C=1.039 t=297s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 31.0% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=0.9252 ovr=0 WL=0.074 D=0.606 C=1.096 t=372s
+       cd_c2: proxy=0.8906 ovr=0 WL=0.074 D=0.602 C=1.031 t=424s
+      cgc_c2: proxy=0.8855 ovr=0 WL=0.074 D=0.602 C=1.021 t=506s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=0.9160 ovr=0 WL=0.074 D=0.596 C=1.089 t=545s
+       cd_c3: proxy=0.8823 ovr=0 WL=0.074 D=0.592 C=1.026 t=585s
+      cgc_c3: proxy=0.8803 ovr=0 WL=0.074 D=0.592 C=1.021 t=658s
+  -- swap refine --
+        swap: proxy=0.8782 ovr=0 WL=0.074 D=0.592 C=1.017 t=788s
+    cd_final: proxy=0.8774 ovr=0 WL=0.074 D=0.591 C=1.016 t=828s
+     cd_cong: proxy=0.8768 ovr=0 WL=0.073 D=0.591 C=1.016 t=968s
+  -- [V16] late-cd_cong std bench (rem@cdcong=2332s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=0.8646 ovr=0 WL=0.071 D=0.579 C=1.008 t=976s
+  opt1_sc_cd: proxy=0.8627 ovr=0 WL=0.071 D=0.579 C=1.005 t=995s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=2305s → Laplacian+LAHC)
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=0.8627 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=0.8627 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=0.8627 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=0.8494 ovr=0 WL=0.073 D=0.557 C=0.996 t=1007s
+  -- V13-rev9 LAHC polish (rem=2293s) --
+     std triple-restart: 3 runs × 714s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.7789 ovr=0 WL=0.067 D=0.505 C=0.919 t=1730s
+  lap_post_r1: proxy=0.7785 ovr=0 WL=0.067 D=0.505 C=0.919 t=1743s
+     lahc_r2: proxy=0.7730 ovr=0 WL=0.065 D=0.504 C=0.912 t=2465s
+  lap_post_r2: proxy=0.7729 ovr=0 WL=0.065 D=0.504 C=0.911 t=2479s
+     lahc_r3: proxy=0.7713 ovr=0 WL=0.065 D=0.504 C=0.910 t=3203s
+  lap_post_r3: proxy=0.7712 ovr=0 WL=0.064 D=0.504 C=0.910 t=3220s
+>>> ibm09: best=lap_post_r3 proxy=0.7712 t=3220s
+proxy=0.7712  (wl=0.064 den=0.504 cong=0.910)  VALID  [3219.61s]
+
+  ibm10... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm10/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 55, Row: 41
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm10/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 55, Row: 41
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm10: hard=786 total=2768 nets=28272 device=cuda mode=HUGE cd_cfg={'K': 6, 'R': 12} budget=3300s ===
+  init      : proxy=1.3397 ovr=74 (invalid)
+      [lnp] bulk=214s rounds=4/4 bulk_iters=1500 viol_after_bulk=193
+      [lnp] greedy=0s viol_after_greedy=98
+      [lnp] spiral=11s viol_after_spiral=18
+      [lnp] internal_fd=3s
+    [attempt s=42] legalize_np=229s viol_after_lnp=2 force_displace=19s (grid 160/6)
+      [lnp] bulk=178s rounds=4/4 bulk_iters=1500 viol_after_bulk=100
+      [lnp] greedy=0s viol_after_greedy=43
+      [lnp] spiral=4s viol_after_spiral=7
+      [lnp] internal_fd=1s
+    [attempt s=7961] legalize_np=182s viol_after_lnp=0 force_displace=0s (grid 280/9)
+    [legalize] total=430s retries=1 final_ovr=0
+    [c1-timing] GD=121s legalize=430s
+       gd_c1: proxy=1.3172 ovr=0 WL=0.080 D=0.806 C=1.669 t=663s
+       cd_c1: proxy=1.2531 ovr=0 WL=0.078 D=0.776 C=1.574 t=793s
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- [V15] very_huge low-cong (cong_frac=0.63) — RUN V7 cycle 2/3 (cong_w=3.0, time-capped legalize) + fast-path Laplacian+triple-LAHC finisher --
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+      [lnp] bulk=162s rounds=4/4 bulk_iters=1500 viol_after_bulk=98
+      [lnp] greedy=0s viol_after_greedy=43
+      [lnp] spiral=7s viol_after_spiral=14
+      [lnp] internal_fd=1s
+    [attempt s=42] legalize_np=170s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=170s retries=0 final_ovr=0
+       gd_c2: proxy=1.2298 ovr=0 WL=0.084 D=0.698 C=1.594 t=1108s
+       cd_c2: proxy=1.1334 ovr=0 WL=0.083 D=0.688 C=1.413 t=1240s
+      cgc_c2: proxy=1.1239 ovr=0 WL=0.083 D=0.687 C=1.395 t=1408s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+      [lnp] bulk=135s rounds=4/4 bulk_iters=1500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=135s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=135s retries=0 final_ovr=0
+       gd_c3: proxy=1.2482 ovr=0 WL=0.085 D=0.735 C=1.591 t=1626s
+       cd_c3: proxy=1.1573 ovr=0 WL=0.084 D=0.705 C=1.441 t=1758s
+      cgc_c3: proxy=1.1493 ovr=0 WL=0.084 D=0.705 C=1.425 t=1927s
+  -- swap refine --
+        swap: proxy=1.1175 ovr=0 WL=0.082 D=0.687 C=1.384 t=2199s
+    cd_final: proxy=1.1081 ovr=0 WL=0.081 D=0.682 C=1.372 t=2335s
+     cd_cong: proxy=1.1039 ovr=0 WL=0.081 D=0.682 C=1.365 t=2640s
+  [fast-path] HUGE + very_huge — skipping polish chain
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=1.1039 < 1.15, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=1.1039 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=55s) --
+   laplacian: proxy=1.0897 ovr=0 WL=0.080 D=0.640 C=1.380 t=2701s
+  -- V13-rev9 LAHC polish (rem=599s) --
+     HUGE inner-interlude: r1=239s + lap + r_mid=80s + lap + r2 (seeds +19000, +24000, +29000)
+     lahc_r1: proxy=1.0765 ovr=0 WL=0.076 D=0.602 C=1.399 t=3007s
+  lap_post_r1: proxy=1.0738 ovr=0 WL=0.076 D=0.600 C=1.397 t=3086s
+  lahc_r_mid: proxy=1.0697 ovr=0 WL=0.075 D=0.600 C=1.389 t=3232s
+  lap_post_r_mid: proxy=1.0680 ovr=0 WL=0.075 D=0.597 C=1.388 t=3313s
+>>> ibm10: best=lap_post_r_mid proxy=1.0680 t=3313s
+proxy=1.0680  (wl=0.075 den=0.597 cong=1.388)  VALID  [3312.91s]
+
+  ibm11... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm11/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 39, Row: 45
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm11/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 39, Row: 45
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm11: hard=373 total=1568 nets=16086 device=cuda mode=std cd_cfg={'K': 10, 'R': 18} budget=3300s ===
+  init      : proxy=1.2141 ovr=129 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.0615 ovr=0 WL=0.064 D=0.714 C=1.282 t=195s
+      [lnp] bulk=16s rounds=3/8 bulk_iters=1000 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=16s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=16s retries=0 final_ovr=0
+    [c1-timing] GD=96s legalize=16s
+       gd_c1: proxy=0.8938 ovr=0 WL=0.068 D=0.537 C=1.115 t=324s
+       cd_c1: proxy=0.8310 ovr=0 WL=0.068 D=0.530 C=0.996 t=395s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 21.7% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=0.8822 ovr=0 WL=0.068 D=0.534 C=1.094 t=493s
+  [V13 S1] gd_c2 (0.8822) regressed >6% vs best (0.8310) — skipping rest of c2 + all of c3
+  -- swap refine --
+        swap: proxy=0.8256 ovr=0 WL=0.068 D=0.529 C=0.985 t=672s
+    cd_final: proxy=0.8196 ovr=0 WL=0.068 D=0.528 C=0.975 t=743s
+     cd_cong: proxy=0.8131 ovr=0 WL=0.069 D=0.528 C=0.961 t=960s
+  -- [V16] late-cd_cong std bench (rem@cdcong=2340s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=0.8144 ovr=0 WL=0.068 D=0.526 C=0.967 t=978s
+  opt1_sc_cd: proxy=0.8126 ovr=0 WL=0.069 D=0.528 C=0.960 t=1014s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=2286s → Laplacian+LAHC)
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=0.8126 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=0.8126 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=0.8126 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=0.8002 ovr=0 WL=0.068 D=0.515 C=0.949 t=1039s
+  -- V13-rev9 LAHC polish (rem=2261s) --
+     std triple-restart: 3 runs × 704s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.7650 ovr=0 WL=0.066 D=0.501 C=0.898 t=1760s
+  lap_post_r1: proxy=0.7648 ovr=0 WL=0.065 D=0.501 C=0.897 t=1785s
+     lahc_r2: proxy=0.7590 ovr=0 WL=0.064 D=0.501 C=0.888 t=2506s
+  lap_post_r2: proxy=0.7589 ovr=0 WL=0.064 D=0.501 C=0.888 t=2530s
+     lahc_r3: proxy=0.7571 ovr=0 WL=0.064 D=0.501 C=0.886 t=3251s
+  lap_post_r3: proxy=0.7570 ovr=0 WL=0.064 D=0.501 C=0.885 t=3276s
+>>> ibm11: best=lap_post_r3 proxy=0.7570 t=3276s
+proxy=0.7570  (wl=0.064 den=0.501 cong=0.885)  VALID  [3276.01s]
+
+  ibm12... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm12/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 47, Row: 47
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm12/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 47, Row: 47
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm12: hard=651 total=2636 nets=28939 device=cuda mode=HUGE cd_cfg={'K': 8, 'R': 15} budget=3300s ===
+  init      : proxy=1.6251 ovr=187 (invalid)
+      [lnp] bulk=155s rounds=4/4 bulk_iters=1500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=155s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=155s retries=0 final_ovr=0
+    [c1-timing] GD=148s legalize=155s
+       gd_c1: proxy=1.2579 ovr=0 WL=0.078 D=0.595 C=1.765 t=459s
+       cd_c1: proxy=1.2037 ovr=0 WL=0.079 D=0.569 C=1.681 t=652s
+  [auto-cong] cong_frac=0.70 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- swap refine --
+        swap: proxy=1.2012 ovr=0 WL=0.079 D=0.569 C=1.675 t=1061s
+    cd_final: proxy=1.1976 ovr=0 WL=0.079 D=0.568 C=1.668 t=1251s
+     cd_cong: proxy=1.1954 ovr=0 WL=0.079 D=0.568 C=1.664 t=1680s
+  [fast-path] HUGE + deep convergence (best=1.1954 < 1.25) — skip polish chain → LAHC
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.1717 ovr=0 WL=0.079 D=0.543 C=1.643 t=1766s
+  -- V13-rev9 LAHC polish (rem=1534s) --
+     HUGE triple-restart: 3 runs × 456s + 3 Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=1.1366 ovr=0 WL=0.075 D=0.518 C=1.605 t=2297s
+  lap_post_r1: proxy=1.1340 ovr=0 WL=0.075 D=0.514 C=1.603 t=2387s
+     lahc_r2: proxy=1.1187 ovr=0 WL=0.075 D=0.513 C=1.575 t=2907s
+  lap_post_r2: proxy=1.1176 ovr=0 WL=0.075 D=0.512 C=1.574 t=2983s
+     lahc_r3: proxy=1.1126 ovr=0 WL=0.075 D=0.511 C=1.565 t=3311s
+>>> ibm12: best=lahc_r3 proxy=1.1126 t=3311s
+proxy=1.1126  (wl=0.075 den=0.511 cong=1.565)  VALID  [3310.97s]
+
+  ibm13... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm13/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 43, Row: 43
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm13/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 43, Row: 43
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm13: hard=424 total=1725 nets=17527 device=cuda mode=std cd_cfg={'K': 10, 'R': 18} budget=3300s ===
+  init      : proxy=1.3854 ovr=180 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.4323 ovr=0 WL=0.092 D=0.839 C=1.842 t=248s
+      [lnp] bulk=9s rounds=2/8 bulk_iters=1000 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=9s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=9s retries=0 final_ovr=0
+    [c1-timing] GD=197s legalize=9s
+       gd_c1: proxy=1.0021 ovr=0 WL=0.076 D=0.549 C=1.304 t=476s
+       cd_c1: proxy=0.9543 ovr=0 WL=0.076 D=0.539 C=1.217 t=568s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 33.4% > 12%, basin strong) --
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=0.9737 ovr=0 WL=0.076 D=0.535 C=1.261 t=727s
+       cd_c2: proxy=0.9294 ovr=0 WL=0.076 D=0.526 C=1.181 t=818s
+      cgc_c2: proxy=0.9251 ovr=0 WL=0.076 D=0.529 C=1.169 t=961s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=0.9651 ovr=0 WL=0.076 D=0.527 C=1.252 t=1047s
+       cd_c3: proxy=0.9317 ovr=0 WL=0.076 D=0.526 C=1.186 t=1136s
+      cgc_c3: proxy=0.9296 ovr=0 WL=0.076 D=0.527 C=1.181 t=1279s
+  -- swap refine --
+        swap: proxy=0.9227 ovr=0 WL=0.076 D=0.529 C=1.164 t=1537s
+    cd_final: proxy=0.9195 ovr=0 WL=0.076 D=0.526 C=1.161 t=1631s
+     cd_cong: proxy=0.9190 ovr=0 WL=0.076 D=0.526 C=1.160 t=1754s
+  -- [V16] late-cd_cong std bench (rem@cdcong=1546s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=0.9124 ovr=0 WL=0.075 D=0.520 C=1.155 t=1776s
+  opt1_sc_cd: proxy=0.9101 ovr=0 WL=0.075 D=0.519 C=1.151 t=1821s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=1479s → Laplacian+LAHC)
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=0.9101 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=0.9101 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=0.9101 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=0.8949 ovr=0 WL=0.074 D=0.510 C=1.131 t=1852s
+  -- V13-rev9 LAHC polish (rem=1448s) --
+     std triple-restart: 3 runs × 433s + Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=0.8629 ovr=0 WL=0.071 D=0.503 C=1.082 t=2303s
+  lap_post_r1: proxy=0.8622 ovr=0 WL=0.071 D=0.502 C=1.081 t=2330s
+     lahc_r2: proxy=0.8521 ovr=0 WL=0.070 D=0.501 C=1.064 t=2785s
+  lap_post_r2: proxy=0.8515 ovr=0 WL=0.070 D=0.501 C=1.063 t=2816s
+     lahc_r3: proxy=0.8466 ovr=0 WL=0.069 D=0.501 C=1.054 t=3270s
+>>> ibm13: best=lahc_r3 proxy=0.8466 t=3270s
+proxy=0.8466  (wl=0.069 den=0.501 cong=1.054)  VALID  [3270.12s]
+
+  ibm14... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm14/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 49, Row: 44
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm14/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 49, Row: 44
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm14: hard=614 total=2143 nets=32008 device=cuda mode=HUGE cd_cfg={'K': 8, 'R': 15} budget=3300s ===
+  init      : proxy=1.5938 ovr=189 (invalid)
+      [lnp] bulk=89s rounds=3/4 bulk_iters=1500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=89s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=89s retries=0 final_ovr=0
+    [c1-timing] GD=389s legalize=89s
+       gd_c1: proxy=1.1468 ovr=0 WL=0.065 D=0.548 C=1.616 t=657s
+       cd_c1: proxy=1.1047 ovr=0 WL=0.065 D=0.530 C=1.549 t=873s
+  [auto-cong] cong_frac=0.70 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- [V13-rev6] predictive c2 skip (HUGE + best=1.1047 < 1.15 + cong_w=4.0, gd_c2 would regress — saves ~200s for LAHC) --
+  -- swap refine --
+        swap: proxy=1.1026 ovr=0 WL=0.065 D=0.530 C=1.544 t=1337s
+    cd_final: proxy=1.0985 ovr=0 WL=0.065 D=0.527 C=1.539 t=1565s
+     cd_cong: proxy=1.0938 ovr=0 WL=0.066 D=0.527 C=1.529 t=2056s
+  [fast-path] HUGE + deep convergence (best=1.0938 < 1.25) — skip polish chain → LAHC
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=1.0938 < 1.15, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=1.0938 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.0815 ovr=0 WL=0.066 D=0.525 C=1.507 t=2159s
+  -- V13-rev9 LAHC polish (rem=1141s) --
+     HUGE triple-restart: 3 runs × 325s + 3 Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=1.0646 ovr=0 WL=0.064 D=0.536 C=1.465 t=2553s
+  lap_post_r1: proxy=1.0626 ovr=0 WL=0.064 D=0.533 C=1.464 t=2664s
+     lahc_r2: proxy=1.0546 ovr=0 WL=0.064 D=0.531 C=1.451 t=3082s
+  lap_post_r2: proxy=1.0530 ovr=0 WL=0.064 D=0.529 C=1.449 t=3192s
+     lahc_r3: proxy=1.0519 ovr=0 WL=0.064 D=0.529 C=1.447 t=3348s
+>>> ibm14: best=lahc_r3 proxy=1.0519 t=3348s
+proxy=1.0519  (wl=0.064 den=0.529 cong=1.447)  VALID  [3347.95s]
+
+  ibm15... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm15/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 57, Row: 38
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm15/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 57, Row: 38
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm15: hard=393 total=1531 nets=24958 device=cuda mode=std cd_cfg={'K': 10, 'R': 18} budget=3300s ===
+  init      : proxy=1.6033 ovr=165 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.8850 ovr=0 WL=0.113 D=0.878 C=2.666 t=576s
+      [lnp] bulk=14s rounds=2/8 bulk_iters=1000 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=14s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=14s retries=0 final_ovr=0
+    [c1-timing] GD=158s legalize=14s
+       gd_c1: proxy=1.2057 ovr=0 WL=0.083 D=0.629 C=1.615 t=803s
+       cd_c1: proxy=1.1844 ovr=0 WL=0.083 D=0.622 C=1.580 t=957s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 37.2% > 12%, basin strong) --
+  [auto-cong] cong_frac=0.67 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.2031 ovr=0 WL=0.083 D=0.631 C=1.610 t=1155s
+       cd_c2: proxy=1.1820 ovr=0 WL=0.083 D=0.627 C=1.571 t=1301s
+      cgc_c2: proxy=1.1804 ovr=0 WL=0.083 D=0.628 C=1.567 t=1478s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.1985 ovr=0 WL=0.083 D=0.628 C=1.603 t=1591s
+       cd_c3: proxy=1.1816 ovr=0 WL=0.083 D=0.627 C=1.571 t=1741s
+      cgc_c3: proxy=1.1798 ovr=0 WL=0.083 D=0.627 C=1.567 t=1916s
+  -- swap refine --
+        swap: proxy=1.1784 ovr=0 WL=0.083 D=0.627 C=1.564 t=2239s
+    cd_final: proxy=1.1776 ovr=0 WL=0.083 D=0.627 C=1.562 t=2393s
+     cd_cong: proxy=1.1769 ovr=0 WL=0.083 D=0.635 C=1.553 t=2550s
+  -- [V16] late-cd_cong std bench (rem@cdcong=750s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=1.1732 ovr=0 WL=0.081 D=0.630 C=1.554 t=2606s
+  opt1_sc_cd: proxy=1.1672 ovr=0 WL=0.081 D=0.626 C=1.546 t=2697s
+  [fast-path] post-opt1 rem=603s < 726s — skipping polish chain
+  -- skipping hess+sig escape (cd_cong gain 0.89% < 0.15%, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.1434 ovr=0 WL=0.081 D=0.616 C=1.509 t=2766s
+  -- V13-rev9 LAHC polish (rem=534s) --
+     multi-restart enabled: 2 runs × 252s + Laplacian interlude (seeds +19000, +29000)
+     lahc_r1: proxy=1.1103 ovr=0 WL=0.076 D=0.604 C=1.464 t=3074s
+  lap_post_r1: proxy=1.1065 ovr=0 WL=0.077 D=0.598 C=1.462 t=3143s
+     lahc_r2: proxy=1.0978 ovr=0 WL=0.075 D=0.588 C=1.457 t=3338s
+>>> ibm15: best=lahc_r2 proxy=1.0978 t=3338s
+proxy=1.0978  (wl=0.075 den=0.588 cong=1.457)  VALID  [3337.82s]
+
+  ibm16... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm16/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 45, Row: 48
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm16/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 45, Row: 48
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm16: hard=458 total=1773 nets=36681 device=cuda mode=HUGE cd_cfg={'K': 10, 'R': 18} budget=3300s ===
+  init      : proxy=1.4911 ovr=86 (invalid)
+      [lnp] bulk=34s rounds=4/8 bulk_iters=1000 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=34s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=34s retries=0 final_ovr=0
+    [c1-timing] GD=333s legalize=34s
+       gd_c1: proxy=1.1278 ovr=0 WL=0.064 D=0.612 C=1.515 t=550s
+       cd_c1: proxy=1.0635 ovr=0 WL=0.064 D=0.588 C=1.410 t=772s
+  [auto-cong] cong_frac=0.66 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- [V13-rev6] predictive c2 skip (HUGE + best=1.0635 < 1.15 + cong_w=4.0, gd_c2 would regress — saves ~200s for LAHC) --
+  -- swap refine --
+        swap: proxy=1.0611 ovr=0 WL=0.065 D=0.588 C=1.405 t=1249s
+    cd_final: proxy=1.0551 ovr=0 WL=0.064 D=0.583 C=1.398 t=1472s
+     cd_cong: proxy=1.0503 ovr=0 WL=0.065 D=0.583 C=1.388 t=1967s
+  [fast-path] HUGE + deep convergence (best=1.0503 < 1.25) — skip polish chain → LAHC
+  -- [V13-rev6] skipping opt3 hot-cell attack (HUGE + best=1.0503 < 1.15, deep convergence) --
+  -- [V13-rev5] skipping hess+sig escape (best=1.0503 < 1.10, deep convergence) --
+  -- [V13-rev6] skipping T1 cong-SA (HUGE + best=1.0503 < 1.15, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.0346 ovr=0 WL=0.064 D=0.563 C=1.377 t=2072s
+  -- V13-rev9 LAHC polish (rem=1228s) --
+     HUGE triple-restart: 3 runs × 354s + 3 Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=1.0218 ovr=0 WL=0.062 D=0.536 C=1.383 t=2520s
+  lap_post_r1: proxy=1.0185 ovr=0 WL=0.063 D=0.530 C=1.382 t=2625s
+     lahc_r2: proxy=1.0083 ovr=0 WL=0.062 D=0.520 C=1.372 t=3071s
+  lap_post_r2: proxy=1.0064 ovr=0 WL=0.062 D=0.517 C=1.372 t=3177s
+     lahc_r3: proxy=1.0041 ovr=0 WL=0.062 D=0.517 C=1.367 t=3341s
+>>> ibm16: best=lahc_r3 proxy=1.0041 t=3341s
+proxy=1.0041  (wl=0.062 den=0.517 cong=1.367)  VALID  [3340.70s]
+
+  ibm17... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm17/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 51, Row: 44
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm17/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 51, Row: 44
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm17: hard=760 total=2604 nets=45825 device=cuda mode=HUGE cd_cfg={'K': 6, 'R': 12} budget=3300s ===
+  init      : proxy=1.7392 ovr=231 (invalid)
+      [lnp] bulk=189s rounds=4/4 bulk_iters=1500 viol_after_bulk=29
+      [lnp] greedy=0s viol_after_greedy=21
+      [lnp] spiral=6s viol_after_spiral=12
+      [lnp] internal_fd=1s
+    [attempt s=42] legalize_np=197s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=197s retries=0 final_ovr=0
+    [c1-timing] GD=266s legalize=197s
+       gd_c1: proxy=1.2725 ovr=0 WL=0.067 D=0.554 C=1.858 t=762s
+       cd_c1: proxy=1.2449 ovr=0 WL=0.067 D=0.536 C=1.820 t=1015s
+  [auto-cong] cong_frac=0.73 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- swap refine --
+        swap: proxy=1.2425 ovr=0 WL=0.068 D=0.536 C=1.814 t=1457s
+    cd_final: proxy=1.2394 ovr=0 WL=0.067 D=0.534 C=1.810 t=1721s
+     cd_cong: proxy=1.2385 ovr=0 WL=0.067 D=0.534 C=1.808 t=1999s
+  [fast-path] HUGE + very_huge — skipping polish chain
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.2242 ovr=0 WL=0.068 D=0.536 C=1.776 t=2136s
+  -- V13-rev9 LAHC polish (rem=1164s) --
+     HUGE triple-restart: 3 runs × 333s + 3 Laplacian interludes (seeds +19000, +29000, +39000)
+     lahc_r1: proxy=1.2027 ovr=0 WL=0.066 D=0.539 C=1.734 t=2592s
+  lap_post_r1: proxy=1.2000 ovr=0 WL=0.066 D=0.537 C=1.731 t=2732s
+     lahc_r2: proxy=1.1916 ovr=0 WL=0.066 D=0.530 C=1.721 t=3184s
+  lap_post_r2: proxy=1.1894 ovr=0 WL=0.066 D=0.528 C=1.718 t=3322s
+>>> ibm17: best=lap_post_r2 proxy=1.1894 t=3322s
+proxy=1.1894  (wl=0.066 den=0.528 cong=1.718)  VALID  [3321.68s]
+
+  ibm18... #[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm18/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 55, Row: 39
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+#[INFO] Reading from external/MacroPlacement/Testcases/ICCAD04/ibm18/netlist.pb.txt
+[INFO] Retrieving Meta information from .plc comments
+#[PLACEMENT GRID] Col: 55, Row: 39
+#[ROUTES PER MICRON] Hor: 65.96, Ver: 106.96
+#[CONGESTION SMOOTH RANGE] Smooth Range: 2
+#[OVERLAP THRESHOLD] Threshold: 0.0040
+=== ibm18: hard=285 total=1314 nets=26184 device=cuda mode=std cd_cfg={'K': 12, 'R': 20} budget=3300s ===
+  init      : proxy=1.7899 ovr=76 (invalid)
+  -- phase α: focused-electrostatic GP (FFT Poisson, K=8) --
+   phaseA_gp: proxy=1.6617 ovr=0 WL=0.061 D=0.947 C=2.254 t=524s
+      [lnp] bulk=10s rounds=8/8 bulk_iters=500 viol_after_bulk=0
+      [lnp] greedy=0s viol_after_greedy=0
+      [lnp] spiral=0s viol_after_spiral=0
+      [lnp] internal_fd=0s
+    [attempt s=42] legalize_np=10s viol_after_lnp=0 force_displace=0s (grid 160/6)
+    [legalize] total=10s retries=0 final_ovr=0
+    [c1-timing] GD=229s legalize=10s
+       gd_c1: proxy=1.2755 ovr=0 WL=0.076 D=0.609 C=1.791 t=811s
+       cd_c1: proxy=1.2424 ovr=0 WL=0.076 D=0.574 C=1.758 t=932s
+  -- [V13-rev5] skipping extra c1 seeds (c1 gain 25.2% > 12%, basin strong) --
+  [auto-cong] cong_frac=0.71 > 0.65 → bumping cong_w 3.0 → 4.0 for cycles 2/3
+  [V16c] net-boost DISABLED (was destabilizing gd_c2 across all benches)
+  -- cycle 2: GD(gamma 3->8) -> CD -> cong-CD --
+       gd_c2: proxy=1.2483 ovr=0 WL=0.077 D=0.592 C=1.751 t=1151s
+       cd_c2: proxy=1.2292 ovr=0 WL=0.077 D=0.576 C=1.728 t=1275s
+      cgc_c2: proxy=1.2286 ovr=0 WL=0.077 D=0.576 C=1.727 t=1444s
+  -- cycle 3: GD(gamma 4->8) -> CD -> cong-CD --
+       gd_c3: proxy=1.2471 ovr=0 WL=0.077 D=0.579 C=1.761 t=1566s
+       cd_c3: proxy=1.2285 ovr=0 WL=0.077 D=0.571 C=1.731 t=1691s
+      cgc_c3: proxy=1.2269 ovr=0 WL=0.077 D=0.571 C=1.728 t=1852s
+  -- swap refine --
+        swap: proxy=1.2247 ovr=0 WL=0.077 D=0.571 C=1.724 t=2124s
+    cd_final: proxy=1.2239 ovr=0 WL=0.077 D=0.570 C=1.723 t=2229s
+     cd_cong: proxy=1.2239 ovr=0 WL=0.077 D=0.570 C=1.723 t=2369s
+  -- [V16] late-cd_cong std bench (rem@cdcong=931s < 2409s): keep T3+opt1, skip polish tail, feed LAHC --
+  -- V13-rev2 Opt 1: soft-macro centroid pull --
+     opt1_sc: proxy=1.2385 ovr=0 WL=0.077 D=0.567 C=1.756 t=2411s
+  opt1_sc_cd: proxy=1.2237 ovr=0 WL=0.077 D=0.570 C=1.723 t=2471s
+  [fast-path][V16] late-cd_cong std — skip polish tail (rem=829s → Laplacian+LAHC)
+  -- skipping hess+sig escape (cd_cong gain 0.02% < 0.15%, deep convergence) --
+  -- V13-rev7 Laplacian soft-resolve (t_cap=90s) --
+   laplacian: proxy=1.2032 ovr=0 WL=0.078 D=0.577 C=1.674 t=2524s
+  -- V13-rev9 LAHC polish (rem=776s) --
+     multi-restart enabled: 2 runs × 373s + Laplacian interlude (seeds +19000, +29000)
+     lahc_r1: proxy=1.1665 ovr=0 WL=0.074 D=0.578 C=1.607 t=2941s
+  lap_post_r1: proxy=1.1651 ovr=0 WL=0.074 D=0.578 C=1.604 t=2993s
+     lahc_r2: proxy=1.1567 ovr=0 WL=0.073 D=0.566 C=1.601 t=3320s
+>>> ibm18: best=lahc_r2 proxy=1.1567 t=3320s
+proxy=1.1567  (wl=0.073 den=0.566 cong=1.601)  VALID  [3320.14s]
+
+--------------------------------------------------------------------------------
+    Benchmark     Proxy        SA   RePlAce     vs SA  vs RePlAce  Overlaps
+--------------------------------------------------------------------------------
+        ibm01    0.7496    1.3166    0.9976     43.1%       24.9%         0
+        ibm02    0.9463    1.9072    1.8370     50.4%       48.5%         0
+        ibm03    0.8727    1.7401    1.3222     49.8%       34.0%         0
+        ibm04    0.8919    1.5037    1.3024     40.7%       31.5%         0
+        ibm06    1.1173    2.5057    1.6187     55.4%       31.0%         0
+        ibm07    0.9627    2.0229    1.4633     52.4%       34.2%         0
+        ibm08    1.0078    1.9239    1.4285     47.6%       29.5%         0
+        ibm09    0.7712    1.3875    1.1194     44.4%       31.1%         0
+        ibm10    1.0680    2.1108    1.5009     49.4%       28.8%         0
+        ibm11    0.7570    1.7111    1.1774     55.8%       35.7%         0
+        ibm12    1.1126    2.8261    1.7261     60.6%       35.5%         0
+        ibm13    0.8466    1.9141    1.3355     55.8%       36.6%         0
+        ibm14    1.0519    2.2750    1.5436     53.8%       31.9%         0
+        ibm15    1.0978    2.3000    1.5159     52.3%       27.6%         0
+        ibm16    1.0041    2.2337    1.4780     55.0%       32.1%         0
+        ibm17    1.1894    3.6726    1.6446     67.6%       27.7%         0
+        ibm18    1.1567    2.7755    1.7722     58.3%       34.7%         0
+--------------------------------------------------------------------------------
+          AVG    0.9767    2.1251    1.4578     54.0%       33.0%         0
+
+Total runtime: 55572.60s
+
+
