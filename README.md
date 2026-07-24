@@ -6,6 +6,10 @@ This repository contains our submission to the macro place challenge 2026 hosted
 
     See more : https://github.com/partcleda/macro-place-challenge-2026
 
+Our Complete implementation method :
+
+    See more : https://medium.com/@amrutayan6/macro-placement-a73c399e64fa
+
 Overview of the challenge : 
 
 Macro placement is the problem of positioning large fixed-size blocks (SRAMs, IPs, analog macros, etc.) on a chip floorplan so that routing congestion, timing, power delivery, and area constraints are balanced. Unlike standard-cell placement, macros have strong geometric and connectivity constraints, so the challenge is to explore a highly discrete design space while minimizing wirelength, avoiding blockages, and preserving downstream routability and timing quality.
