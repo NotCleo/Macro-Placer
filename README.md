@@ -65,5 +65,30 @@ Our team produced the following performance for the ICCAD04 benchmark;
     │   ├── script20.py          
     │   ├── script21.py          
     └──  └── Performance/performance.txt
+
+I personally recommend the non-Docker method of testing; 
+
+##  Evaluation Instructions (Manual — Without Docker)
+
+```bash
+# 1. Clone the challenge repository
+git clone [https://github.com/partcleda/partcl-macro-place-challenge.git](https://github.com/NotCleo/MacroPlacer.git)
+cd MacroPlacer
+
+# 2. Initialize TILOS MacroPlacement submodule
+git submodule update --init external/MacroPlacement
+
+# 3. Install python dependencies via uv
+uv sync
+uv pip install numba scipy
+
+sudo apt-get update && sudo apt-get install -y libfftw3-dev pkg-config
+
+# 4. Run the evaluation for ibm01 benchmark
+uv run evaluate Two-IIITK-Kids/placer.py -b ibm01
+
+# 5. Run the evaluation for ibm01 benchmark
+uv run evaluate Two-IIITK-Kids/placer.py --all
+```
     
 
