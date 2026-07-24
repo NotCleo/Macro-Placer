@@ -34,13 +34,14 @@ Our team produced the following performance for the ICCAD04 benchmark;
     ├── README.md                   # This file
     ├── LICENSE                     # Apache 2.0
     ├── benchmarks                  # benchmark files
+    ├── external                    # benchmark files
     ├── baselines                   # baseline files
     ├── eval_docker                 # Docker environment
     ├── macro_place                 # Support scripts
     ├── scripts                     # Support scripts
     ├── test                        # Support scripts
     ├── src                         # Support scripts
-    ├── SmoothGDCDGPSA              # [Our Submission]
+    ├── Two-IIITK-Kids              # [Our Submission]
     │   ├── placer.py               # Entry point script
     │   ├── script1.py            
     │   ├── script2.py            
