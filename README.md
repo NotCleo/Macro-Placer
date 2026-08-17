@@ -2,8 +2,7 @@
 
 Macro-Placer is our custom implementation of placing macro cells on an ASIC floorplan
 
-
-### This repository contains our submission to the macro place challenge 2026 hosted by Partcl x Hudson River Trading
+This repository contains our submission to the macro place challenge 2026 hosted by Partcl x Hudson River Trading
 
     See more : https://github.com/partcleda/macro-place-challenge-2026
 
@@ -11,23 +10,23 @@ Macro-Placer is our custom implementation of placing macro cells on an ASIC floo
 
     See more : https://medium.com/@amrutayan6/macro-placement-a73c399e64fa
 
-## Overview of the challenge : 
+### Overview of the challenge : 
 
 Macro placement is the problem of positioning large fixed-size blocks (SRAMs, IPs, analog macros, etc.) on a chip floorplan so that routing congestion, timing, power delivery, and area constraints are balanced. Unlike standard-cell placement, macros have strong geometric and connectivity constraints, so the challenge is to explore a highly discrete design space while minimizing wirelength, avoiding blockages, and preserving downstream routability and timing quality.
   
     Our team (Two-IIITK-Kids) currently is on global rank 13 :D
     
-#### The ranking was produced after taking in three metrics {congestion, wire-length, density} to produce a proxy cost;
+##### The ranking was produced after taking in three metrics {congestion, wire-length, density} to produce a proxy cost;
     
     Proxy Cost = 1.0 × Wirelength + 0.5 × Density + 0.5 × Congestion
     
-#### Our team produced the following performance for the ICCAD04 benchmark;
+##### Our team produced the following performance for the ICCAD04 benchmark;
 
     (Official) Proxy Cost = 1.0295, Time = 2432s/benchmark
     (Unofficial) Proxy Cost = 0.9767, Time = 3160s/benchmark
 
 
-#### Result summary (ICCAD 04)
+##### Result summary (ICCAD 04)
         
         --------------------------------------------------------------------------------
             Benchmark     Proxy        SA   RePlAce     vs SA  vs RePlAce  Overlaps
